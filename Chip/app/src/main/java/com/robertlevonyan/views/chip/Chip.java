@@ -121,8 +121,9 @@ public class Chip extends RelativeLayout {
     }
 
     @Override
-    public void setSelected(boolean ignored) {
-        if (this.selected) {
+    public void setSelected(boolean select) {
+        this.selected = select;
+        if (select) {
             onSelectTouchDown();
         } else {
             onSelectTouchUp(selectIcon);
