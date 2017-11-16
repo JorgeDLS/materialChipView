@@ -130,6 +130,11 @@ public class Chip extends RelativeLayout {
         }
     }
 
+    @Override
+    public boolean isSelected() {
+        return this.selected;
+    }
+
     private void buildView() {
         isCreated = true;
         initBackgroundColor();
