@@ -124,7 +124,7 @@ public class Chip extends RelativeLayout {
     public void setSelected(boolean select) {
         this.selected = select;
         if (select) {
-            onSelectTouchDown();
+            onSelectTouchDown(selectIcon);
         } else {
             onSelectTouchUp(selectIcon);
         }
@@ -151,7 +151,7 @@ public class Chip extends RelativeLayout {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                     case MotionEvent.ACTION_POINTER_DOWN:
-                        onSelectTouchDown();
+                        onSelectTouchDown(v);
                         break;
                     case MotionEvent.ACTION_UP:
                     case MotionEvent.ACTION_POINTER_UP:
@@ -165,7 +165,12 @@ public class Chip extends RelativeLayout {
         });
     }
 
-    private void onSelectTouchDown() {
+    private void onSelectTouchDown(View v) {
+        this.selected = !this.selected;
+        if(this.onSelectClickListener != null) {
+            this.onSelectClickListener.onSelectClick(v, this.selected);
+        }
+
         clicked = true;
         initBackgroundColor();
         initTextView();
