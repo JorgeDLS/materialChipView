@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.JorgeDLS'
 
 android {
     compileSdkVersion 26
@@ -27,11 +30,11 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-publish {
+/*publish {
     groupId = 'com.robertlevonyan.view'
     artifactId = 'MaterialChipView'
     publishVersion = '1.1.2'
     desc = 'Material Chip view. Can be used as tags for categories, contacts or creating text clouds'
     licences = ['Apache-2.0']
     website = 'https://github.com/robertlevonyan/materialChipView'
-}
+}*/
