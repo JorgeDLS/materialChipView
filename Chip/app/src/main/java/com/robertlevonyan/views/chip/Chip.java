@@ -122,12 +122,8 @@ public class Chip extends RelativeLayout {
 
     @Override
     public void setSelected(boolean select) {
-        this.selected = select;
-        if (select) {
-            onSelectTouchDown(selectIcon);
-        } else {
-            onSelectTouchUp(selectIcon);
-        }
+        onSelectTouchDown(selectIcon);
+        onSelectTouchUp(selectIcon);
     }
 
     @Override
@@ -166,11 +162,6 @@ public class Chip extends RelativeLayout {
     }
 
     private void onSelectTouchDown(View v) {
-        this.selected = !this.selected;
-        if(this.onSelectClickListener != null) {
-            this.onSelectClickListener.onSelectClick(v, this.selected);
-        }
-
         clicked = true;
         initBackgroundColor();
         initTextView();
