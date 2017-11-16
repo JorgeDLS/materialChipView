@@ -122,7 +122,7 @@ public class Chip extends RelativeLayout {
 
     @Override
     public void setSelected(boolean select) {
-        onSelectTouchDown(selectIcon);
+        onSelectTouchDown();
         onSelectTouchUp(selectIcon);
     }
 
@@ -147,7 +147,7 @@ public class Chip extends RelativeLayout {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                     case MotionEvent.ACTION_POINTER_DOWN:
-                        onSelectTouchDown(v);
+                        onSelectTouchDown();
                         break;
                     case MotionEvent.ACTION_UP:
                     case MotionEvent.ACTION_POINTER_UP:
@@ -161,7 +161,7 @@ public class Chip extends RelativeLayout {
         });
     }
 
-    private void onSelectTouchDown(View v) {
+    private void onSelectTouchDown() {
         clicked = true;
         initBackgroundColor();
         initTextView();
