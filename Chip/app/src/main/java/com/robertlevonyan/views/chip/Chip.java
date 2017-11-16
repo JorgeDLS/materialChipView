@@ -120,6 +120,15 @@ public class Chip extends RelativeLayout {
         }
     }
 
+    @Override
+    public void setSelected() {
+        if (this.selected) {
+            onSelectTouchDown();
+        } else {
+            onSelectTouchUp(selectIcon);
+        }
+    }
+
     private void buildView() {
         isCreated = true;
         initBackgroundColor();
